@@ -9,7 +9,7 @@ Alice -> Bob: Authentication Request
 @enduml
 
 
-@startuml
+```startuml
 start
 if (condition A) then (yes)
 :Text 1;
@@ -24,4 +24,4 @@ else (nothing)
 :Text else;
 endif
 stop
-@enduml
+```enduml
