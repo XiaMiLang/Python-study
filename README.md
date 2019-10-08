@@ -8,6 +8,13 @@ Alice -> Bob: Authentication Request
 
 @enduml
 
+```mermaid
+
+a -> b
+
+```
+
+
 
 ```startuml
 start
