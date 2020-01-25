@@ -1,0 +1,43 @@
+# import urllib.request as request
+# src = "https://www.ntu.edu.tw/"
+# with request.urlopen(src) as response:
+#     data = response.read().decode("utf-8")
+# print(data)
+
+#
+# import json
+# import urllib.request as request
+# src = "https://data.tainan.gov.tw/api/3/action/datastore_search?resource_id=6da8e048-3b16-4eca-965f-3a3f4720494a&limit=5"
+# with request.urlopen(src) as response:
+#     data = json.load(response)
+# print(data)
+
+# import urllib.request
+# url = "https://data.tainan.gov.tw/api/3/action/datastore_search?resource_id=6da8e048-3b16-4eca-965f-3a3f4720494a"
+# fileobj = urllib.request.urlopen(url).read().decode("utf-8")
+# print(fileobj)
+# clist = fileobj["result"]["records"]
+# print(clist)
+# for company in clist:
+#     print(company["熱點名稱"])
+
+# import json
+# import urllib.request
+# # url = "https://data.tainan.gov.tw/api/3/action/datastore_search?resource_id=6da8e048-3b16-4eca-965f-3a3f4720494a"
+# fileobj = json.load(urllib.request.urlopen(url))
+#
+# print(fileobj)
+# clist = fileobj["result"]["records"]
+# with open("data.txt", "w", encoding="utf-8") as file:
+#     for company in clist:
+#         file.write(str(company["_id"]) + "\t" + company["熱點名稱"] + "\n")
+
+import json
+import urllib.request
+url = "https://odata.tn.edu.tw/schoolapi/api/getdata?"
+fileobj = json.load(urllib.request.urlopen(url))
+print(fileobj)
+# clist = fileobj["getdata"]["schoolid"]
+with open("data.txt", "w", encoding="utf-8") as file:
+    for company in fileobj:
+        file.write(str(company["schoolID"]) + "\t" + company["SchoolName"] + "\n")
